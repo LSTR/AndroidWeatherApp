@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">"AndroidWeatherApp "</string>
+    <string name="app_name">"Weather App"</string>
+    <string name="t_weather">Weather</string>
+    <string name="no_data_available">No hay datos para mostrar!</string>
+
+
+
+
+
+
+    <string name="weather_sunny">&#xf00d;</string>
+    <string name="weather_clear_night">&#xf02e;</string>
+
+    <string name="weather_foggy">&#xf014;</string>
+    <string name="weather_cloudy">&#xf013;</string>
+    <string name="weather_rainy">&#xf019;</string>
+    <string name="weather_snowy">&#xf01b;</string>
+    <string name="weather_thunder">&#xf01e;</string>
+    <string name="weather_drizzle">&#xf01c;</string>
+
+    <string name="change_city">Change city</string>
+    <string name="place_not_found">Sorry, no weather data found.</string>
+    <string name="change">Go</string>
+
+    <string name="last_update">Last Update:&#160;</string>
+    <string name="pressure">Pressure:&#160;</string>
+    <string name="humidity">Humidity:&#160;</string>
 </resources>

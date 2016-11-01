@@ -1,4 +1,4 @@
-package com.lstr.wheater.app;
+package com.lstr.weather.app;
 
 import org.junit.Test;
 
