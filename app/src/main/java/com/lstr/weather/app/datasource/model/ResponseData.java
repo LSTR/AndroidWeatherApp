@@ -1,24 +1,16 @@
 package com.lstr.weather.app.datasource.model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.util.ArrayList;
 
 /**
  * Created by LSTR on 11/1/16.
  */
 public class ResponseData {
-    @SerializedName("base")
     private String base;
-    @SerializedName("name")
     private String name;
-    @SerializedName("sys")
     private SysModel sys;
-    @SerializedName("weather")
     private ArrayList<WeatherModel> weather;
-    @SerializedName("dt")
     private long dt;
-    @SerializedName("main")
     private MainModel main;
 
     public MainModel getMain() {

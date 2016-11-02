@@ -1,4 +1,4 @@
-package com.lstr.weather.app.datasource;
+package com.lstr.weather.app.datasource.rest.retrofit;
 
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;

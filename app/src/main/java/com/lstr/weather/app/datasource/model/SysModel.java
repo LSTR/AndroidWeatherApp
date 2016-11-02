@@ -6,11 +6,8 @@ import com.google.gson.annotations.SerializedName;
  * Created by LSTR on 11/1/16.
  */
 public class SysModel {
-    @SerializedName("country")
     private String country;
-    @SerializedName("sunrise")
     private long sunrise;
-    @SerializedName("sunset")
     private long sunset;
 
     public long getSunrise() {

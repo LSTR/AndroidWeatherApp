@@ -1,16 +1,11 @@
 package com.lstr.weather.app.datasource.model;
 
-import com.google.gson.annotations.SerializedName;
-
 /**
- * Created by jmtech on 11/1/16.
+ * Created by LSTR on 11/1/16.
  */
 public class MainModel {
-    @SerializedName("humidity")
     private String humidity;
-    @SerializedName("pressure")
     private String pressure;
-    @SerializedName("temp")
     private Double temp;
 
     public String getHumidity() {

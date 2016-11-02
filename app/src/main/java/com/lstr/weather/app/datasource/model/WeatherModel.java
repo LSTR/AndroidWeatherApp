@@ -1,16 +1,12 @@
 package com.lstr.weather.app.datasource.model;
 
-import com.google.gson.annotations.SerializedName;
-
 /**
  * Created by LSTR on 11/1/16.
  */
 public class WeatherModel {
-    @SerializedName("main")
+
     private String main;
-    @SerializedName("description")
     private String description;
-    @SerializedName("id")
     private int id;
 
     public int getId() {

@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ import java.util.Locale;
 
 import butterknife.Bind;
 import butterknife.BindString;
+import butterknife.OnClick;
 
 /**
  * Created by LSTR on 10/30/16.
@@ -36,6 +38,7 @@ public class WeatherFragment extends BaseFragment implements WeatherView{
     @Bind(R.id.weather_icon) TextView weatherIcon;
     @Bind(R.id.current_temperature_field) TextView currentTemperatureField;
     @Bind(R.id.details_field) TextView detailsField;
+    @Bind(R.id.txt_city_name) EditText txt_city_name;
     private Typeface weatherFont;
 
     private OnListener presenter;
@@ -70,8 +73,7 @@ public class WeatherFragment extends BaseFragment implements WeatherView{
     @Override
     public void onStart() {
         super.onStart();
-
-        weatherPresenter.getUpdateWeatherData("Lima");
+        weatherPresenter.getLatLng();
     }
 
     private void loadPresenter() {
@@ -110,6 +112,16 @@ public class WeatherFragment extends BaseFragment implements WeatherView{
         super.onDestroyView();
     }
 
+    @OnClick(R.id.iv_button)
+    public void search(){
+        String city = txt_city_name.getText().toString();
+        if(!city.equals("")){
+            weatherPresenter.getUpdateWeatherData(city);
+        }else{
+            weatherPresenter.getUpdateWeatherData("Lima");
+        }
+    }
+
     @Override
     public void showResult(ResponseData resultado) {
         cityField.setText(resultado.getSys().getCountry());
@@ -123,6 +135,14 @@ public class WeatherFragment extends BaseFragment implements WeatherView{
         updatedField.setText(getResources().getString(R.string.last_update) + updatedOn);
 
         setWeatherIcon(resultado.getWeather().get(0).getId(), resultado.getSys().getSunrise() * 1000, resultado.getSys().getSunset() * 1000);
+    }
+
+    @Override
+    public void showCity(String city) {
+        if(city != null && city.length()>1){
+            txt_city_name.setText(city);
+            weatherPresenter.getUpdateWeatherData(city);
+        }
     }
 
     private void setWeatherIcon(int actualId, long sunrise, long sunset) {

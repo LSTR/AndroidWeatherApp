@@ -10,4 +10,5 @@ import com.lstr.weather.app.datasource.model.ResponseData;
 public interface WeatherView {
     Context getContext();
     void showResult(ResponseData data);
+    void showCity(String location);
 }
